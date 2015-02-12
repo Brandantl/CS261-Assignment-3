@@ -27,14 +27,12 @@ public:
     virtual void compose(char *);
 
 
-	// Operator overloads  +, += 
+	// Operator overloads 
 	virtual const Message& operator=(const Message& obj);
 	virtual bool operator==(const Message& obj) const;
 	virtual bool operator!=(const Message& obj) const;
-
 	virtual bool operator<(const Message& obj) const;
 	virtual bool operator>(const Message& obj) const;
-
 	virtual Message operator+(const Message&);
 	virtual Message operator+=(const Message&);
 private:

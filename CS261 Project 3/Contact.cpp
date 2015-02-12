@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   contacts.cpp
  * Author: brandan
  * 
@@ -7,12 +7,50 @@
 
 #include "Contact.h"
 
-Contact::Contact() {
+Contact::Contact(): index(0), pref(0){
+
+	name = "i";
+}
+Contact::Contact(Contact& nCon){
+	this->name = nCon.name;
+	this->index = nCon.index; //sets contact index for new contact record
+	this->pref = nCon.pref;
 }
 
-Contact::Contact(const Contact& orig) {
-}
+Contact::Contact(string aName, int index, int flag){
 
+	this->name = aName;
+	this->index = index;
+	this->pref = flag;
+
+}
 Contact::~Contact() {
 }
 
+void Contact::setName(const string aName){
+	name = aName;
+}
+
+string Contact::getName(){
+		return name;
+}
+
+void Contact::print(){
+	cout << "record index: " << index << " name: " <<  name;
+}
+
+int Contact::getPref(){
+	return pref;
+}
+
+void Contact::setPref(int flag){
+
+	pref = flag;
+}
+
+
+void Contact::operator=(Contact& nCon){
+	this->name = nCon.name;
+	this->index = nCon.index; //sets contact index for new contact record
+        this->pref = nCon.pref;
+}

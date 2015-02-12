@@ -96,14 +96,14 @@ Message  Message::operator+=(const Message& obj){
 }
 
 bool Message::operator<(const Message& obj) const {
-	if (obj.timeStamp < this->timeStamp) {
+	if (obj.timeStamp > this->timeStamp) {
 		return true;
 	}
 	return false;
 }
 
 bool Message::operator>(const Message& obj) const {
-	if (obj.timeStamp > obj.timeStamp) {
+	if (obj.timeStamp < this->timeStamp) {
 		return true;
 	}
 	return false;
