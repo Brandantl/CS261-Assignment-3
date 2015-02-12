@@ -12,12 +12,14 @@
 
 class Email : public Message {
 public:
-    Email(string to, string from, int num, string emailAddress, string subjectLine);
-    Email(const Email& orig);
+    //Email(string to, string from, int num, string emailAddress, string subjectLine);
+   // Email(const Email& orig);
+	Email();
     virtual ~Email();
     virtual int print();
     virtual int compose(string aMessage);
-    virtual Email operator=(const Email & e);
+	virtual const Email& operator=(const Email& e);
+	bool operator==(const Email& obj) const;
 private:
     string emailAddress;
     string emailSubject;

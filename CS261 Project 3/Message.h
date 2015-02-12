@@ -20,7 +20,8 @@ public:
     virtual ~Message();
     virtual int print();
     virtual int compose(string);
-    virtual Message operator=(const Message & m);
+	virtual const Message& operator=(const Message& obj);
+	virtual bool operator==(const Message& obj) const;
 private:
     string nameFrom;
     string nameTo;

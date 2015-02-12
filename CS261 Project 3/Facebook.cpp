@@ -35,4 +35,9 @@ int Facebook::compose(string aMessage) {
 Facebook Facebook::operator=(const Facebook & f) {
     Message::operator=(f);
     this->userName = f.userName;
+	return *this;
+}
+
+bool Facebook::operator==(const Facebook& obj) const {
+	return true;
 }

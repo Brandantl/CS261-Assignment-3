@@ -35,8 +35,14 @@ int Text::compose(string aMessage) {
 }
 
 const Text& Text::operator=(const Text& t) {
-    Message::operator=(t);
-    this->phoneNumberFrom = t.phoneNumberFrom;
-    this->phoneNumberTo = t.phoneNumberTo;
+	if (!(*this == t)) {
+		Message::operator=(t);
+		this->phoneNumberFrom = t.phoneNumberFrom;
+		this->phoneNumberTo = t.phoneNumberTo;
+	}
     return *this;
+}
+
+bool Text::operator == (const Text& obj) const {
+	return true;
 }

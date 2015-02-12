@@ -18,6 +18,7 @@ public:
     virtual int print();
     virtual int compose(string aMessage);
     virtual const Text& operator=(const Text& obj);
+	virtual bool operator==(const Text& obj) const;
 private:
     int phoneNumberTo;
     int phoneNumberFrom;

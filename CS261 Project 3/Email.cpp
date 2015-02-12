@@ -35,8 +35,15 @@ int Email::compose(string aMessage) {
     return 1;
 }
 
-Email Email::operator=(const Email & e) {
-    Message::operator=(e);
-    this->emailAddress = e.emailAddress;
-    this->emailSubject = e.emailSubject;
+const Email& Email::operator=(const Email& e) {
+	if (!(*this == e)) {
+		Message::operator=(e);
+		this->emailAddress = e.emailAddress;
+		this->emailSubject = e.emailSubject;
+	}
+	return *this;
+}
+
+bool Email::operator==(const Email& obj) const {
+	return true;
 }

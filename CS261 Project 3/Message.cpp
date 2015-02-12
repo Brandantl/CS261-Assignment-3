@@ -4,6 +4,7 @@
  * 
  * Created on February 3, 2015, 11:56 AM
  */
+#define _CRT_SECURE_NO_WARNINGS
 
 #include "Message.h"
 
@@ -42,12 +43,17 @@ int Message::compose(string aMessage) {
     return 1;
 }
 
-Message Message::operator=(const Message & m) {
-    this->nameFrom = m.nameFrom;
-    this->nameTo = m.nameTo;
-    this->content = m.content;
-    this->index = m.index;
-    this->timeStamp = m.timeStamp;
-    return m;
+const Message& Message::operator=(const Message& m) {
+	if (!(*this == m)) {
+		this->nameFrom = m.nameFrom;
+		this->nameTo = m.nameTo;
+		this->content = m.content;
+		this->index = m.index;
+		this->timeStamp = m.timeStamp;
+	}
+    return *this;
 }
 
+bool Message::operator == (const Message& obj) const {
+	return true;
+}
