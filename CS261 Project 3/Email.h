@@ -12,17 +12,19 @@
 
 class Email : public Message {
 public:
-  //  Email(string to, string from, int num, string emailAddress, string subjectLine);
-  // Email(const Email& orig);
 	Email();
     virtual ~Email();
     virtual void print();
     virtual void compose(char * aMessage);
+	virtual char* getEmailAddress() const;
+	virtual char* getEmailSubject() const;
+	virtual void setEmailAddress(char *);
+	virtual void setEmailSubject(char *);
 	virtual const Email& operator=(const Email& e);
 	bool operator==(const Email& obj) const;
 private:
-    string emailAddress;
-    string emailSubject;
+    char* emailAddress;
+    char* emailSubject;
 };
 
 #endif	/* EMAIL_H */

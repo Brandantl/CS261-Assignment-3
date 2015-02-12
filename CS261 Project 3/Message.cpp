@@ -66,7 +66,47 @@ const Message& Message::operator=(const Message& m) {
 }
 
 bool Message::operator == (const Message& obj) const {
-	return true;
+	if ((this->nameFrom == obj.nameFrom) && (this->nameTo == obj.nameTo) && (this->content == obj.content)) {
+		return true;
+	}
+	return false;
+}
+
+bool  Message::operator!=(const Message& obj) const {
+	return (!this->operator==(obj));
+}
+
+Message  Message::operator+(const Message& obj) {
+	this->operator+=(obj);
+	return *this;
+}
+
+Message  Message::operator+=(const Message& obj){
+	string tmp = content;
+	string tmp2 = obj.content;
+	tmp += tmp2;
+	if (this->content) {
+		delete[] this->content;
+	}
+	if (tmp.c_str()) {
+		this->nameFrom = new char[strlen(tmp.c_str()) + 1];
+		strcpy(this->content, tmp.c_str());
+	}
+	return *this;
+}
+
+bool Message::operator<(const Message& obj) const {
+	if (obj.timeStamp < this->timeStamp) {
+		return true;
+	}
+	return false;
+}
+
+bool Message::operator>(const Message& obj) const {
+	if (obj.timeStamp > obj.timeStamp) {
+		return true;
+	}
+	return false;
 }
 
 void Message::setFrom(char * _from)  {
@@ -101,4 +141,8 @@ char * Message::getFrom() const {
 
 char * Message::getTo() const  {
 	return nameTo;
+}
+
+char * Message::getContent() const {
+	return this->content;
 }

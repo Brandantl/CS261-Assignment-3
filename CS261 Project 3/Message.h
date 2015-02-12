@@ -21,6 +21,7 @@ public:
     virtual void print();
 	virtual char * getFrom() const;
 	virtual char * getTo() const;
+	virtual char * getContent() const;
 	virtual void setFrom(char * _from);
 	virtual void setTo(char * _to);
     virtual void compose(char *);
@@ -30,6 +31,10 @@ public:
 	virtual const Message& operator=(const Message& obj);
 	virtual bool operator==(const Message& obj) const;
 	virtual bool operator!=(const Message& obj) const;
+
+	virtual bool operator<(const Message& obj) const;
+	virtual bool operator>(const Message& obj) const;
+
 	virtual Message operator+(const Message&);
 	virtual Message operator+=(const Message&);
 private:

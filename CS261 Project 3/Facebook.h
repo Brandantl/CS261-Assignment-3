@@ -13,16 +13,15 @@ using namespace std;
 
 class Facebook : public Message {
 public:
-    //Facebook(string to, string from, int num, string aUserName);
-   // Facebook(const Facebook& orig);
 	Facebook();
     virtual ~Facebook();
     virtual void print();
     virtual void compose(char * aMessage);
+	virtual char * getUsername() const;
+	virtual void setUsername(char*);
     virtual Facebook operator=(const Facebook & f);
-	virtual bool operator==(const Facebook& obj) const;
 private:
-    string userName;
+    char* userName;
     int userID;
 };
 
