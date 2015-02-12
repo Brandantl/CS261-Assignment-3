@@ -14,7 +14,7 @@
 //#include "FBContact.h"
 class FBContact: public Contact{
 public:
-	FBContact(string &, int &, int &, string &);
+	FBContact(string &, int &, Type &, string &);
 	FBContact(FBContact &);
 	~FBContact();
 	string getFbName();

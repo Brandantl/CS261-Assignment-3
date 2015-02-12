@@ -5,7 +5,7 @@
 
 class EmailContact:public Contact{
 public:
-	EmailContact(string &, int &, int &, string&);
+	EmailContact(string &, int &, Type &, string&);
 	EmailContact(EmailContact&);
 	~EmailContact();
 	void setEmAdress(const string);

@@ -9,7 +9,7 @@
 /*TxtContact::TxtContact():Contact("i", 0, 0), phone(0){
 	
 }*/
-TxtContact::TxtContact(string & aName, int & index, int & ph, int & pref):Contact(aName, index, pref){
+TxtContact::TxtContact(string & aName, int & index, int & ph, Type & pref) : Contact(aName, index, pref){
 	phone = ph;
 }
 

@@ -16,7 +16,7 @@ class TxtContact: public Contact{
 
 public:
 	TxtContact();//default constructor
-	TxtContact(string & , int &, int &, int &);
+	TxtContact(string &, int &, int &, Type &);
 	TxtContact(TxtContact & tContact);//copy constructor
 	~TxtContact();
 	int getPhNumber()const;

@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   contacts.h
  * Author:David P
  *
@@ -10,25 +10,30 @@
 #include<iostream>
 #include<string>
 
+
+
 using namespace std;
 class Contact {
 public:
-    Contact();//default constructor
-    Contact(string &, int &, int &);
-    Contact(Contact&);//copy constructor
-    virtual ~Contact();
-    virtual void setName(const string &);
-    virtual string getName();
-    //virtual int getIndex();
-    //virtual void setIndex(const int &);
-    virtual void  print();
-    virtual int getPref();
-    virtual void setPref(const int &);
-    virtual void operator=(Contact&);
+	enum Type {
+		Text,
+		Email,
+		Facebook
+	};
+
+	Contact();//default constructor
+	Contact(string &, int &, Type &);
+	Contact(Contact&);//copy constructor
+	virtual ~Contact();
+	virtual void setName(const string &);
+	virtual string getName();
+	virtual void  print();
+	virtual Type getPref();
+	virtual void setPref(const Type &);
+	virtual void operator=(Contact&);
 private:
-	int index;
 	string name;
-	int pref;// preference 1 is txt, preference 2 is email, preference 3 is facebook
+	Type pref;// preference 1 is txt, preference 2 is email, preference 3 is facebook
 };
 
 #endif	/* CONTACTS_H */

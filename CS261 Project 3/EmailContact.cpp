@@ -11,7 +11,7 @@
 EmailContact::EmailContact():Contact("i", 0, 0) {
 	eAdress = "i";
 }*/
-EmailContact::EmailContact(string &  aName, int & index, int & pref, string &  emAdress) : Contact(aName, index, pref){
+EmailContact::EmailContact(string &  aName, int & index, Type & pref, string &  emAdress) : Contact(aName, index, pref){
 	this->eAdress = emAdress;
 }
 

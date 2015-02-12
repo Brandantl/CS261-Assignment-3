@@ -13,7 +13,7 @@ FBContact::FBContact():Contact("i", 0, 0){
 	
 	login = "i";
 }*/
-FBContact::FBContact(string & name, int & index, int & pref, string & log) : Contact(name, index, pref){
+FBContact::FBContact(string & name, int & index, Type & pref, string & log) : Contact(name, index, pref){
 	this->login = log;
 }
 FBContact::FBContact(FBContact & nFbContact) : Contact(nFbContact){

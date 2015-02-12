@@ -7,34 +7,25 @@
 
 #include "Contact.h"
 
-Contact::Contact(): index(0), pref(0){
+Contact::Contact() {
 
 	name = "i";
 }
 Contact::Contact(Contact& nCon){
 	this->name = nCon.name;
-	this->index = nCon.index; //sets contact index for new contact record
 	this->pref = nCon.pref;
 }
 
-Contact::Contact(string & aName, int & index, int & flag){
+Contact::Contact(string & aName, int & index, Type & flag){
 
 	this->name = aName;
-	this->index = index;
 	this->pref = flag;
 
 }
 Contact::~Contact() {
-}
-/*
-void Contact::setIndex(const int & num){
-	index = num;
+
 }
 
-int Contact::getIndex(){
-	return index;
-}
-*/
 void Contact::setName(const string & aName){
 	name = aName;
 }
@@ -44,14 +35,14 @@ string Contact::getName(){
 }
 
 void Contact::print(){
-	cout << "record index: " << index << " name: " <<  name;
+	cout << " name: " <<  name;
 }
 
-int Contact::getPref(){
+Contact::Type Contact::getPref(){
 	return pref;
 }
 
-void Contact::setPref(const int & flag){
+void Contact::setPref(const Type & flag){
 
 	pref = flag;
 }
@@ -59,6 +50,5 @@ void Contact::setPref(const int & flag){
 
 void Contact::operator=(Contact& nCon){
 	this->name = nCon.name;
-	this->index = nCon.index; //sets contact index for new contact record
         this->pref = nCon.pref;
 }
