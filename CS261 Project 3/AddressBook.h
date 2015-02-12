@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   addressbook.h
  * Author: brandan
  *
@@ -14,14 +14,14 @@ using namespace std;
 
 class AddressBook {
 public:
-    AddressBook();
-    AddressBook(const AddressBook& orig);
-    ~AddressBook();
-    int displayContacts();
-    int addContact(string var);
-    int removeContact(int index);
+	AddressBook();
+	AddressBook(const AddressBook& orig);
+	~AddressBook();
+	int displayContacts();
+	int addContact(string var);
+	int removeContact(int index);
 private:
-    vector <Contact*> myContacts;
+	vector <Contact*> myContacts;
 };
 
 #endif	/* ADDRESSBOOK_H */

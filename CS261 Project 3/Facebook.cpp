@@ -27,7 +27,7 @@ int Facebook::print() {
 }
 
 
-int Facebook::compose(string aMessage) {
+int Facebook::compose(char * aMessage) {
     Message::compose(aMessage);
     return 1;
 }

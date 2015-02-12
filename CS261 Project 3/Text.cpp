@@ -15,8 +15,8 @@
 
 Text::Text(const Text& orig) {
 	//*this = orig;
-}
-*/
+}*/
+
 
 Text::~Text() {
 
@@ -29,7 +29,7 @@ int Text::print() {
     return 1;
 }
 
-int Text::compose(string aMessage) {
+int Text::compose(char * aMessage) {
     Message::compose(aMessage);
     return 1;
 }

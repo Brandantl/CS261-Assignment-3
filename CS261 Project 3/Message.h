@@ -15,18 +15,21 @@ using namespace std;
 
 class Message {
 public:
-    Message(string to, string from, int num);
     Message(const Message& orig);
 	Message();
     virtual ~Message();
     virtual int print();
-    virtual int compose(string);
+	virtual char * getFrom() const;
+	virtual char * getTo() const;
+	virtual void setFrom(char * _from);
+	virtual void setTo(char * _to);
+    virtual int compose(char *);
 	virtual const Message& operator=(const Message& obj);
 	virtual bool operator==(const Message& obj) const;
 private:
-    string nameFrom;
-    string nameTo;
-    string content;
+    char * nameFrom;
+	char * nameTo;
+	char * content;
     int index;
     time_t timeStamp;
 };
