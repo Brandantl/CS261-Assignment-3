@@ -12,7 +12,7 @@
 
 class Email : public Message {
 public:
-	Email();
+	Email(char * _subject, char * _to, char * _from, char * _message);
     virtual ~Email();
     virtual void print();
     virtual void compose(char * aMessage);

@@ -12,11 +12,10 @@ Message::Message(const Message& orig) {
 	*this = orig;
 }
 
-Message::Message(){
-	content = NULL;
-	this->nameFrom = NULL;
-	this->nameTo = NULL;
-	timeStamp = time(NULL);
+Message::Message(char * _to, char* _from, char* content) {
+	this->setTo(_to);
+	this->setFrom(_from);
+	this->compose(content);
 }
 
 Message::~Message() {

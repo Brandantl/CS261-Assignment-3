@@ -17,7 +17,6 @@ Contact::Contact(Contact& nCon){
 }
 
 Contact::Contact(string & aName, int & index, Type & flag){
-
 	this->name = aName;
 	this->pref = flag;
 

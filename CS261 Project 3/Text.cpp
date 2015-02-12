@@ -1,61 +1,81 @@
-/* 
+/*
  * File:   text.cpp
  * Author: brandan
- * 
+ *
  * Created on February 3, 2015, 11:57 AM
  */
-
+#define _CRT_SECURE_NO_WARNINGS
 #include "Text.h"
 
-/*Text::Text(string to, string from, int num, int numTo, int numFrom) {
-    Message(to, from, num);
-    phoneNumberTo = numTo;
-    phoneNumberFrom = numFrom;
+Text::Text(char * numTo, char * numFrom, char * msg) : Message(numTo, numFrom, msg) {
+	this->setTo(numTo);
+	this->setFrom(numFrom);
 }
 
-Text::Text(const Text& orig) {
-	//*this = orig;
-}*/
-
+/*Text::Text(const Text& orig)  {
+	*this = orig;
+	}*/
 
 Text::~Text() {
-
+	if (this->phoneNumberTo) {
+		delete[] this->phoneNumberTo;
+	}
+	if (this->phoneNumberFrom) {
+		delete[] this->phoneNumberFrom;
+	}
 }
 
 void Text::print() {
-    cout << "Phone number to: " << phoneNumberTo << endl
-            << "Phone number from: " << phoneNumberFrom << endl;
-    Message::print();
+	cout << "Phone number to: " << phoneNumberTo << endl
+		<< "Phone number from: " << phoneNumberFrom << endl;
+	Message::print();
 }
 
 void Text::compose(char * aMessage) {
-    Message::compose(aMessage);
+	Message::compose(aMessage);
 }
 
-void Text::setPhoneNumberFrom(long long number) {
-	phoneNumberFrom = number;
+void Text::setPhoneNumberFrom(char *  number) {
+	if (this->phoneNumberFrom) {
+		delete[] this->phoneNumberFrom;
+	}
+	if (number) {
+		this->phoneNumberFrom = new char[strlen(number) + 1];
+		strcpy(this->phoneNumberFrom, number);
+	}
+	else {
+		this->phoneNumberFrom = NULL;
+	}
 }
-//Yes
 
-void Text::setPhoneNumberTo(long long number) {
-	phoneNumberTo = number;
+void Text::setPhoneNumberTo(char *  number) {
+	if (this->phoneNumberTo) {
+		delete[] this->phoneNumberTo;
+	}
+	if (number) {
+		this->phoneNumberTo = new char[strlen(number) + 1];
+		strcpy(this->phoneNumberTo, number);
+	}
+	else {
+		this->phoneNumberTo = NULL;
+	}
 }
 
-long long Text::getPhoneNumberFrom() const {
+char *  Text::getPhoneNumberFrom() const {
 	return phoneNumberFrom;
 }
 
-long long Text::getPhoneNumberTo() const {
+char *  Text::getPhoneNumberTo() const {
 	return phoneNumberTo;
 }
 
 const Text& Text::operator=(const Text& t) {
 	if (!(*this == t)) {
 		Message::operator=(t);
-		this->phoneNumberFrom = t.phoneNumberFrom;
-		this->phoneNumberTo = t.phoneNumberTo;
+		this->setTo(t.phoneNumberFrom);
+		this->setFrom(t.phoneNumberTo);
 	}
-    return *this;
+	return *this;
 }
 
 bool Text::operator == (const Text& obj) const {

@@ -12,22 +12,21 @@
 
 class Text : public Message {
 public:
-    //Text(string to, string from, int num, int numTo, int numFrom);
-   //Text(const Text& orig);
-	Text();
+	Text(char * numTo, char * numFrom, char * msg);
+	Text(const Text& orig);
     virtual ~Text();
     virtual void print();
     virtual void compose(char * aMessage);
-	virtual void setPhoneNumberTo(long long);
-	virtual void setPhoneNumberFrom(long long);
-	virtual long long getPhoneNumberTo() const;
-	virtual long long getPhoneNumberFrom() const;
+	virtual void setPhoneNumberTo(char *);
+	virtual void setPhoneNumberFrom(char *);
+	virtual char *  getPhoneNumberTo() const;
+	virtual char *  getPhoneNumberFrom() const;
 
     virtual const Text& operator=(const Text& obj);
 	virtual bool operator==(const Text& obj) const;
 private:
-    long long phoneNumberTo;
-	long long phoneNumberFrom;
+    char * phoneNumberTo;
+	char *  phoneNumberFrom;
 };
 
 #endif	/* TEXT_H */

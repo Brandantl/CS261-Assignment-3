@@ -7,13 +7,16 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "Email.h"
-Email::Email() {
-	emailAddress = NULL;
-	emailSubject = NULL;
+Email::Email(char * _subject, char * _to, char * _from, char * _message) : Message(_to, _from, _message) {
+	this->setEmailAddress(_to);
+	this->setEmailSubject(_subject);
 }
 
 
 Email::~Email() {
+	if (this->emailAddress) {
+		delete[] this->emailAddress;
+	}
 }
 
 void Email::print() {

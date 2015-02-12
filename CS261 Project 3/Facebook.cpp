@@ -2,28 +2,30 @@
 
  * File:   facebook.cpp
  * Author: brandan
- * 
+ *
  * Created on February 3, 2015, 11:57 AM
  */
 #define _CRT_SECURE_NO_WARNINGS
 #include "Facebook.h"
 
-Facebook::Facebook() {
-	userName = NULL;
+Facebook::Facebook(char * _to, char * _from, char * _message) : Message(_to, _from, _message) {
+	this->setUsername(_from);
 }
 
 Facebook::~Facebook() {
-    
+	if (this->userName) {
+		delete[] this->userName;
+	}
 }
 
 void Facebook::print() {
-    cout << "Username: " << userName << endl;
-    Message::print();
+	cout << "Username: " << userName << endl;
+	Message::print();
 }
 
 
 void Facebook::compose(char * aMessage) {
-    Message::compose(aMessage);
+	Message::compose(aMessage);
 }
 
 char* Facebook::getUsername() const {
@@ -44,7 +46,7 @@ void Facebook::setUsername(char * name) {
 }
 
 Facebook Facebook::operator=(const Facebook & f) {
-    Message::operator=(f);
+	Message::operator=(f);
 	this->setUsername(f.userName);
 	return *this;
 }

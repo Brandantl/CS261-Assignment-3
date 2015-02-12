@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   message.h
  * Author: brandan
  *
@@ -15,16 +15,17 @@ using namespace std;
 
 class Message {
 public:
-    Message(const Message& orig);
-	Message();
-    virtual ~Message();
-    virtual void print();
+	Message(const Message& orig);
+	Message(char * _to, char* _from, char* content);
+	//Message();
+	virtual ~Message();
+	virtual void print();
 	virtual char * getFrom() const;
 	virtual char * getTo() const;
 	virtual char * getContent() const;
 	virtual void setFrom(char * _from);
 	virtual void setTo(char * _to);
-    virtual void compose(char *);
+	virtual void compose(char *);
 
 
 	// Operator overloads 
@@ -36,11 +37,11 @@ public:
 	virtual Message operator+(const Message&);
 	virtual Message operator+=(const Message&);
 private:
-    char * nameFrom;
+	char * nameFrom;
 	char * nameTo;
 	char * content;
-    int index;
-    time_t timeStamp;
+	int index;
+	time_t timeStamp;
 };
 
 

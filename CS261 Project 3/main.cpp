@@ -6,13 +6,16 @@
  */
 
 #include <cstdlib>
-
+#include "Text.h"
 using namespace std;
 
 /*
  * 
  */
 int main(int argc, char** argv) {
+	Text	msg("","","");
+
+
 
     return 0;
 }

@@ -13,7 +13,7 @@ using namespace std;
 
 class Facebook : public Message {
 public:
-	Facebook();
+	Facebook(char * _to, char * _from, char * _message);
     virtual ~Facebook();
     virtual void print();
     virtual void compose(char * aMessage);
