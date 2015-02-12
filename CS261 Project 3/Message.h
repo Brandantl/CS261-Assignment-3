@@ -18,14 +18,20 @@ public:
     Message(const Message& orig);
 	Message();
     virtual ~Message();
-    virtual int print();
+    virtual void print();
 	virtual char * getFrom() const;
 	virtual char * getTo() const;
 	virtual void setFrom(char * _from);
 	virtual void setTo(char * _to);
-    virtual int compose(char *);
+    virtual void compose(char *);
+
+
+	// Operator overloads  +, += 
 	virtual const Message& operator=(const Message& obj);
 	virtual bool operator==(const Message& obj) const;
+	virtual bool operator!=(const Message& obj) const;
+	virtual Message operator+(const Message&);
+	virtual Message operator+=(const Message&);
 private:
     char * nameFrom;
 	char * nameTo;

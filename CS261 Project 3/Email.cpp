@@ -21,18 +21,14 @@
 Email::~Email() {
 }
 
-int Email::print() {
+void Email::print() {
 	cout << "Email address: " << emailAddress << endl;
 	cout << "Subject: " << emailSubject << endl;
 	Message::print();
-	return 1;
 }
 
-
-
-int Email::compose(char * aMessage) {
+void Email::compose(char * aMessage) {
 	Message::compose(aMessage);
-	return 1;
 }
 
 const Email& Email::operator=(const Email& e) {

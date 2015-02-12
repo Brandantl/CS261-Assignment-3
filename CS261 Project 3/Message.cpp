@@ -31,8 +31,7 @@ Message::~Message() {
 	}
 }
 
-int Message::print() {
-
+void Message::print() {
 	struct tm* timeinfo;
 	timeinfo = localtime(&timeStamp);
 
@@ -40,10 +39,9 @@ int Message::print() {
 	cout << "From: " << nameFrom << endl;
 	cout << "To: " << nameTo << endl;
 	cout << content << endl << endl;
-	return 1;
 }
 
-int Message::compose(char * aMessage) {
+void Message::compose(char * aMessage) {
 	if (this->content) {
 		delete[] this->content;
 	}
@@ -54,7 +52,6 @@ int Message::compose(char * aMessage) {
 	else {
 		this->content = NULL;
 	}
-	return 1;
 }
 
 const Message& Message::operator=(const Message& m) {

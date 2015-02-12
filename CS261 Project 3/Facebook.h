@@ -17,8 +17,8 @@ public:
    // Facebook(const Facebook& orig);
 	Facebook();
     virtual ~Facebook();
-    virtual int print();
-    virtual int compose(char * aMessage);
+    virtual void print();
+    virtual void compose(char * aMessage);
     virtual Facebook operator=(const Facebook & f);
 	virtual bool operator==(const Facebook& obj) const;
 private:

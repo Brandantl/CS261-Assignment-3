@@ -16,13 +16,18 @@ public:
    //Text(const Text& orig);
 	Text();
     virtual ~Text();
-    virtual int print();
-    virtual int compose(char * aMessage);
+    virtual void print();
+    virtual void compose(char * aMessage);
+	virtual void setPhoneNumberTo(long long);
+	virtual void setPhoneNumberFrom(long long);
+	virtual long long getPhoneNumberTo() const;
+	virtual long long getPhoneNumberFrom() const;
+
     virtual const Text& operator=(const Text& obj);
 	virtual bool operator==(const Text& obj) const;
 private:
-    int phoneNumberTo;
-    int phoneNumberFrom;
+    long long phoneNumberTo;
+	long long phoneNumberFrom;
 };
 
 #endif	/* TEXT_H */

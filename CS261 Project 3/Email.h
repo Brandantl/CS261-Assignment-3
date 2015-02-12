@@ -16,8 +16,8 @@ public:
   // Email(const Email& orig);
 	Email();
     virtual ~Email();
-    virtual int print();
-    virtual int compose(char * aMessage);
+    virtual void print();
+    virtual void compose(char * aMessage);
 	virtual const Email& operator=(const Email& e);
 	bool operator==(const Email& obj) const;
 private:

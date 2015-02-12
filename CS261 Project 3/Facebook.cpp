@@ -20,16 +20,14 @@ Facebook::~Facebook() {
     
 }
 
-int Facebook::print() {
+void Facebook::print() {
     cout << "Username: " << userName << endl;
     Message::print();
-    return 1;
 }
 
 
-int Facebook::compose(char * aMessage) {
+void Facebook::compose(char * aMessage) {
     Message::compose(aMessage);
-    return 1;
 }
 
 Facebook Facebook::operator=(const Facebook & f) {

@@ -22,16 +22,31 @@ Text::~Text() {
 
 }
 
-int Text::print() {
+void Text::print() {
     cout << "Phone number to: " << phoneNumberTo << endl
             << "Phone number from: " << phoneNumberFrom << endl;
     Message::print();
-    return 1;
 }
 
-int Text::compose(char * aMessage) {
+void Text::compose(char * aMessage) {
     Message::compose(aMessage);
-    return 1;
+}
+
+void Text::setPhoneNumberFrom(long long number) {
+	phoneNumberFrom = number;
+}
+//Yes
+
+void Text::setPhoneNumberTo(long long number) {
+	phoneNumberTo = number;
+}
+
+long long Text::getPhoneNumberFrom() const {
+	return phoneNumberFrom;
+}
+
+long long Text::getPhoneNumberTo() const {
+	return phoneNumberTo;
 }
 
 const Text& Text::operator=(const Text& t) {
