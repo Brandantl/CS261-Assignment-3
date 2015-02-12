@@ -14,9 +14,9 @@
 }
 
 Text::Text(const Text& orig) {
-    phoneNumberTo = orig.phoneNumberTo;
-    phoneNumberFrom = orig.phoneNumberFrom;
-}*/
+	//*this = orig;
+}
+*/
 
 Text::~Text() {
 

@@ -12,8 +12,9 @@
 
 class Text : public Message {
 public:
-    Text(string to, string from, int num, int numTo, int numFrom);
-    Text(const Text& orig);
+    //Text(string to, string from, int num, int numTo, int numFrom);
+    //Text(const Text& orig);
+	Text();
     virtual ~Text();
     virtual int print();
     virtual int compose(string aMessage);

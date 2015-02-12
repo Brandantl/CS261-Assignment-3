@@ -12,8 +12,8 @@
 
 class Email : public Message {
 public:
-    //Email(string to, string from, int num, string emailAddress, string subjectLine);
-   // Email(const Email& orig);
+  //  Email(string to, string from, int num, string emailAddress, string subjectLine);
+  // Email(const Email& orig);
 	Email();
     virtual ~Email();
     virtual int print();

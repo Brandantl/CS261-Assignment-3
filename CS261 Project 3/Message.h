@@ -17,6 +17,7 @@ class Message {
 public:
     Message(string to, string from, int num);
     Message(const Message& orig);
+	Message();
     virtual ~Message();
     virtual int print();
     virtual int compose(string);
