@@ -16,7 +16,7 @@ class Mailbox {
 public:
     Mailbox();
     Mailbox(const Mailbox& orig);
-    ~Mailbox();
+	virtual ~Mailbox();
     int displayMessage(int var);
     int writeMessage(string);
     int print();

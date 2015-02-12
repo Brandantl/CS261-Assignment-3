@@ -30,7 +30,15 @@ void EmailContact:: setEmAdress(const string nAdress){
 string EmailContact::getEmAdress(){
 	return eAdress;
 }
+/*
+int getIndex(){
+	int index = Contact::getIndex();
+	return index;
+}
 
+void setIndex(int & index){
+	Contact::setIndex(index);
+}*/
 void EmailContact::print(){
 	Contact::print();
 	cout << "email adress" << eAdress << endl;

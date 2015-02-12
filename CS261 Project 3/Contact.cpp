@@ -17,7 +17,7 @@ Contact::Contact(Contact& nCon){
 	this->pref = nCon.pref;
 }
 
-Contact::Contact(string aName, int index, int flag){
+Contact::Contact(string & aName, int & index, int & flag){
 
 	this->name = aName;
 	this->index = index;
@@ -26,8 +26,16 @@ Contact::Contact(string aName, int index, int flag){
 }
 Contact::~Contact() {
 }
+/*
+void Contact::setIndex(const int & num){
+	index = num;
+}
 
-void Contact::setName(const string aName){
+int Contact::getIndex(){
+	return index;
+}
+*/
+void Contact::setName(const string & aName){
 	name = aName;
 }
 
@@ -43,7 +51,7 @@ int Contact::getPref(){
 	return pref;
 }
 
-void Contact::setPref(int flag){
+void Contact::setPref(const int & flag){
 
 	pref = flag;
 }
