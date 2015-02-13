@@ -21,7 +21,6 @@ public:
 	~TxtContact();
 	char * getPhNumber()const;
 	void print();
-//	TxtContact& operator=(TxtContact & tContact);
 	void setPhNumber(char *);
 private:
 	char * phone;

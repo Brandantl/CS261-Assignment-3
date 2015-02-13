@@ -12,9 +12,9 @@ Text::Text(char * numTo, char * numFrom, char * msg) : Message(numTo, numFrom, m
 	this->setPhoneNumberFrom(numFrom);
 }
 
-/*Text::Text(const Text& orig)  {
+Text::Text(const Text& orig) : Message(NULL, NULL, NULL) {
 	*this = orig;
-	}*/
+}
 
 Text::~Text() {
 	if (this->phoneNumberTo) {

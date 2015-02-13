@@ -11,7 +11,7 @@ public:
 	void setEmAdress(char *);
 	char * getEmAdress() const;
 	void print();
-
+	// Todo add = and ==
 private:
 	char * eAdress;
 };

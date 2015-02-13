@@ -16,7 +16,7 @@ AddressBook::AddressBook(const AddressBook& orig) {
 }
 
 AddressBook::~AddressBook() {
-
+	// Not needed.
 }
 
 void AddressBook::displayContacts(){

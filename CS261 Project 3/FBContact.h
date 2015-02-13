@@ -19,6 +19,7 @@ public:
 	char * getFbName() const;
 	void setFbName(char *);
 	void print();
+	// Todo add = and ==
 private:
 	char * login;
 };

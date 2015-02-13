@@ -17,6 +17,7 @@ Mailbox::Mailbox(const Mailbox& orig) {
 }
 
 Mailbox::~Mailbox() {
+	// Not needed.
 }
 
 void Mailbox::displayMessages(){
