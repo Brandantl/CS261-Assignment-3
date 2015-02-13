@@ -12,7 +12,7 @@ EmailContact::EmailContact(char *  aName, char *  emAdress) : Contact(aName, Con
 	this->setEmAdress(emAdress);
 }
 
-EmailContact::EmailContact(EmailContact & currEmContact) : Contact(currEmContact)
+EmailContact::EmailContact(const  EmailContact & currEmContact) : Contact(currEmContact)
 {
 	this->setEmAdress(currEmContact.eAdress);
 }

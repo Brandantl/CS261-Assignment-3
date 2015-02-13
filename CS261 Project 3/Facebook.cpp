@@ -12,6 +12,10 @@ Facebook::Facebook(char * _to, char * _from, char * _message) : Message(_to, _fr
 	this->setUsername(_from);
 }
 
+Facebook::Facebook(const Facebook&) : Message(NULL, NULL, NULL)  {
+	// TODO!!!!!
+}
+
 Facebook::~Facebook() {
 	if (this->userName) {
 		delete[] this->userName;

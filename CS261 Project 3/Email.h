@@ -13,6 +13,7 @@
 class Email : public Message {
 public:
 	Email(char * _subject, char * _to, char * _from, char * _message);
+	Email(const Email&);// <============================== TODO
     virtual ~Email();
     virtual void print();
     virtual void compose(char * aMessage);

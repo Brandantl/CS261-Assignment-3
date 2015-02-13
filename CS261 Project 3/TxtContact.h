@@ -17,7 +17,7 @@ class TxtContact: public Contact{
 public:
 	TxtContact();//default constructor
 	TxtContact(char *, char *);
-	TxtContact(TxtContact & tContact);//copy constructor
+	TxtContact(const TxtContact & tContact);//copy constructor
 	~TxtContact();
 	char * getPhNumber()const;
 	void print();

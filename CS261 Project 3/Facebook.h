@@ -14,6 +14,7 @@ using namespace std;
 class Facebook : public Message {
 public:
 	Facebook(char * _to, char * _from, char * _message);
+	Facebook(const Facebook&);// <============================== TODO
     virtual ~Facebook();
     virtual void print();
     virtual void compose(char * aMessage);

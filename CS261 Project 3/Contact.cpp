@@ -11,9 +11,9 @@ Contact::Contact() {
 
 	name = "i";
 }
-Contact::Contact(Contact& nCon){
-	this->name = nCon.name;
-	this->pref = nCon.pref;
+Contact::Contact(const Contact& nCon){
+	this->setName(nCon.name);
+	this->setPref(nCon.pref);
 }
 
 Contact::Contact(char * aName, Type flag) {

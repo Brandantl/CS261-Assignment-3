@@ -23,7 +23,7 @@ public:
 
 	Contact();//default constructor
 	Contact(char *, Type);
-	Contact(Contact&);//copy constructor
+	Contact(const Contact&);//copy constructor
 	virtual ~Contact();
 	virtual void setName( char *);
 	virtual char * getName() const;

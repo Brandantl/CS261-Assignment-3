@@ -8,7 +8,9 @@
 #ifndef ADDRESSBOOK_H
 #define	ADDRESSBOOK_H
 #include <vector>
-#include <string>
+#include "TxtContact.h"
+#include "EmailContact.h"
+#include "FBContact.h"
 #include "Contact.h"
 using namespace std;
 
@@ -17,9 +19,8 @@ public:
 	AddressBook();
 	AddressBook(const AddressBook& orig);
 	~AddressBook();
-	int displayContacts();
-	int addContact(string var);
-	int removeContact(int index);
+	void displayContacts();
+	void addContact(char * var);
 private:
 	vector <Contact*> myContacts;
 };

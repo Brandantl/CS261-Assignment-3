@@ -6,7 +6,7 @@
 class EmailContact:public Contact{
 public:
 	EmailContact(char *, char*);
-	EmailContact(EmailContact&);
+	EmailContact(const EmailContact&);
 	~EmailContact();
 	void setEmAdress(char *);
 	char * getEmAdress() const;

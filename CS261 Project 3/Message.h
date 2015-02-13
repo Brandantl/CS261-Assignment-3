@@ -17,7 +17,6 @@ class Message {
 public:
 	Message(const Message& orig);
 	Message(char * _to, char* _from, char* content);
-	//Message();
 	virtual ~Message();
 	virtual void print();
 	virtual char * getFrom() const;

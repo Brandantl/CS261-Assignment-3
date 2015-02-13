@@ -31,6 +31,7 @@
     <ClInclude Include="EmailContact.h" />
     <ClInclude Include="Facebook.h" />
     <ClInclude Include="FBContact.h" />
+    <ClInclude Include="Linklist.h" />
     <ClInclude Include="Mailbox.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="Text.h" />

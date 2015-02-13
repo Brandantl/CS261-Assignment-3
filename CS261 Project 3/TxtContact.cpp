@@ -14,7 +14,7 @@ TxtContact::TxtContact(char * aName, char * ph) : Contact(aName, Contact::Text){
 	this->setPhNumber(ph);
 }
 
-TxtContact::TxtContact(TxtContact & tContact) : Contact(tContact){
+TxtContact::TxtContact(const TxtContact & tContact) : Contact(tContact){
 
 	phone = tContact.phone;
 }

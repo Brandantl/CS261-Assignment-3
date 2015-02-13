@@ -7,20 +7,27 @@
 
 #ifndef INBOX_H
 #define	INBOX_H
-#include <string>
-#include <vector>
+
+#include "Text.h"
+#include "Email.h"
+#include "Facebook.h"
 #include "Message.h"
+#include <vector>
+
 using namespace std;
 
 class Mailbox {
 public:
+	enum Type {
+		Text,
+		Email,
+		Facebook
+	};
     Mailbox();
     Mailbox(const Mailbox& orig);
 	virtual ~Mailbox();
-    int displayMessage(int var);
-    int writeMessage(string);
-    int print();
-    int removeMessage(int var);
+    int displayMessages();
+    int writeMessage(char *);
 private:
     vector <Message*> myMSG;
 };

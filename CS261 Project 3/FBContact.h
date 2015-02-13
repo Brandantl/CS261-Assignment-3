@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include "Contact.h"
-//#include "FBContact.h"
 class FBContact: public Contact{
 public:
 	FBContact(char *, char *);
@@ -20,7 +19,6 @@ public:
 	char * getFbName() const;
 	void setFbName(char *);
 	void print();
-//	virtual void operator=(FBContact &);
 private:
 	char * login;
 };
