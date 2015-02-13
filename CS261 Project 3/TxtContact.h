@@ -25,7 +25,5 @@ public:
 	void setPhNumber(char *);
 private:
 	char * phone;
-
-
 };
 #endif /* defined(____TxtContact__) */

@@ -18,17 +18,17 @@ using namespace std;
 class AddressBook {
 public:
 	enum Type {
-		Text,
-		Email,
-		Facebook
+		TextCont,
+		EmailCont,
+		FacebookCont
 	};
 	AddressBook();
 	AddressBook(const AddressBook& orig);
 	~AddressBook();
 	void displayContacts();
-	void addContact(char * var);
+	void addContact(char * _name, char * _address, Type  thing);
 private:
-	Linklist <Contact*> myContacts;
+	Linklist <Contact> myContacts;
 };
 
 #endif	/* ADDRESSBOOK_H */

@@ -6,9 +6,23 @@
  */
 using namespace std;
 #include "AddressBook.h"
-#include "Contact.h"
+#include "Mailbox.h"
+#include <iostream>
 
 int main(int argc, char** argv) {
+	AddressBook AddrBook;
+	AddrBook.addContact("Brandan", "admin@brandanlasley.com", AddressBook::EmailCont);
+	AddrBook.addContact("Brandan", "admin@brandanlasley.com", AddressBook::EmailCont);
+	AddrBook.addContact("Brandan", "admin@brandanlasley.com", AddressBook::EmailCont);
+	AddrBook.addContact("Brandan", "admin@brandanlasley.com", AddressBook::EmailCont);
+	AddrBook.displayContacts();
+
+
+	/*Mailbox asdf;
+	asdf.writeMessage("1", "2", "3", "4", Mailbox::EmailMsg);
+	asdf.displayMessages();
+	*/
+
 	//Linklist<TxtContact> asdf;
 	//TxtContact TextContactTest("Brandan Lasley", "5039293771");
 	//asdf.insert(&TextContactTest);
@@ -16,9 +30,9 @@ int main(int argc, char** argv) {
 
 	/*cout << "Type: Text Message" << endl;
 	Text	TextMessageTest("5039958473", "5039293771", "Hello My Name Is Brandan!");
-	TextMessageTest.print();
+	TextMessageTest.print();*/
 
-	cout << "Type: Email Message" << endl;
+	/*cout << "Type: Email Message" << endl;
 	Email EmailMessageTest("Project 3", "ceo@brandanlasley.com", "admin@brandanlasley.com", "You're Fired!");
 	EmailMessageTest.print();
 
@@ -40,6 +54,7 @@ int main(int argc, char** argv) {
 	FBContact FaceBookContactTest("Brandan Lasley", "brandan.lasley");
 	FaceBookContactTest.print();*/
 
+	cin.get();
 	return 0;
 }
 

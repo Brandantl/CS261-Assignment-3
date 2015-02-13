@@ -18,17 +18,17 @@ using namespace std;
 class Mailbox {
 public:
 	enum Type {
-		Text,
-		Email,
-		Facebook
+		TextMsg,
+		EmailMsg,
+		FacebookMsg
 	};
 	Mailbox();
 	Mailbox(const Mailbox& orig);
 	virtual ~Mailbox();
-	int displayMessages();
-	int writeMessage(char *);
+	void displayMessages();
+	void writeMessage(char *, char *, char*, char*, Type thing);
 private:
-	Linklist <Message*> myMSG;
+	Linklist <Message> myMSG;
 };
 
 

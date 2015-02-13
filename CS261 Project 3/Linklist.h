@@ -2,11 +2,12 @@
 * File:   Linklist.h
 * Author: brandan
 *
-* Created on February 12, 2015, 19:57 AM
+* Created on February 12, 2015, 19:57
 */
 
 #ifndef LINKLIST_L
 #define	LINKLIST_L
+#include <iostream>
 using namespace std;
 
 template <class ItemType>
@@ -35,7 +36,7 @@ private:
 template <class ItemType>
 Linklist<ItemType>::Linklist() {
 	size = 0;
-//	head = NULL;
+	//	head = NULL;
 }
 
 template <class ItemType>
@@ -54,6 +55,7 @@ Linklist<ItemType>::Linklist(Linklist<ItemType>&  orig) {
 				head = new node<ItemType>;
 				head->item = current->item;
 				head->next = NULL;
+				tail = head;
 			}
 		}
 	}
@@ -69,6 +71,9 @@ Linklist<ItemType>::~Linklist() {
 	while (head) {
 		curr = head->next;
 		if ((size > 1) && head->item) {
+			delete head->item;
+		}
+		else if ((size == 1) && head->item) {
 			delete head->item;
 		}
 		delete head;
@@ -100,6 +105,7 @@ bool Linklist<ItemType>::insert(ItemType * thing) {
 		else {
 			prev->next = newNode;
 		}
+		tail = newNode;
 		size++;
 		return true;
 	}
