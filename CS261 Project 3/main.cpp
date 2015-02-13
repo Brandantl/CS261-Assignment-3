@@ -33,13 +33,13 @@ int main(int argc, char** argv) {
 		char tmpOne[MAX_LEN];
 		char tmpTwo[MAX_LEN];
 		char tmpThree[MAX_LEN];
-		int tmp = -1;
+		int tmp = 0;
 		switch (command) {
 		case 'c':
 			MyUser.checkMessages();
 			break;
 		case 'w':
-			while ((tmp <= -1) || (tmp > 3)) {
+			while ((tmp <= 0) || (tmp > 3)) {
 				tmp = getInt("Please enter message type (1 = Text, 2 = Email, 3 = Facebook): ");
 			}
 			getString("Address: ", tmpThree);
