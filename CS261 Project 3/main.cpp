@@ -4,34 +4,16 @@
  *
  * Created on February 3, 2015, 11:56 AM
  */
-
-#include <cstdlib>
-
-#include "Text.h"
-#include "Email.h"
-#include "Facebook.h"
-
-#include "TxtContact.h"
-#include "EmailContact.h"
-#include "FBContact.h"
-
-#include "Linklist.h"
-
 using namespace std;
+#include "AddressBook.h"
+#include "Contact.h"
 
 int main(int argc, char** argv) {
+	//Linklist<TxtContact> asdf;
+	//TxtContact TextContactTest("Brandan Lasley", "5039293771");
+	//asdf.insert(&TextContactTest);
+	//asdf.display();
 
-
-
-	Linklist<TxtContact> asdf;
-	TxtContact TextContactTest("Brandan Lasley", "5039293771");
-	asdf.insert(&TextContactTest);
-	asdf.display();
-
-
-
-	cin.get();
-	return 0;
 	/*cout << "Type: Text Message" << endl;
 	Text	TextMessageTest("5039958473", "5039293771", "Hello My Name Is Brandan!");
 	TextMessageTest.print();
@@ -57,9 +39,6 @@ int main(int argc, char** argv) {
 	cout << endl << "Type: FaceBook Contact" << endl;
 	FBContact FaceBookContactTest("Brandan Lasley", "brandan.lasley");
 	FaceBookContactTest.print();*/
-
-	cin.get();
-
 
 	return 0;
 }

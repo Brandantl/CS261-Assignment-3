@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   inbox.h
  * Author: brandan
  *
@@ -8,11 +8,10 @@
 #ifndef INBOX_H
 #define	INBOX_H
 
+#include "Linklist.h"
 #include "Text.h"
 #include "Email.h"
 #include "Facebook.h"
-#include "Message.h"
-#include <vector>
 
 using namespace std;
 
@@ -23,13 +22,13 @@ public:
 		Email,
 		Facebook
 	};
-    Mailbox();
-    Mailbox(const Mailbox& orig);
+	Mailbox();
+	Mailbox(const Mailbox& orig);
 	virtual ~Mailbox();
-    int displayMessages();
-    int writeMessage(char *);
+	int displayMessages();
+	int writeMessage(char *);
 private:
-    vector <Message*> myMSG;
+	Linklist <Message*> myMSG;
 };
 
 

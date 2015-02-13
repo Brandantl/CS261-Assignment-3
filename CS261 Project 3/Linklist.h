@@ -32,13 +32,10 @@ private:
 };
 
 
-
-#endif	/* LINKLIST_L */
-
 template <class ItemType>
 Linklist<ItemType>::Linklist() {
 	size = 0;
-	head = NULL;
+//	head = NULL;
 }
 
 template <class ItemType>
@@ -71,7 +68,7 @@ Linklist<ItemType>::~Linklist() {
 	node<ItemType> * curr = head;
 	while (head) {
 		curr = head->next;
-		if (head->item) {
+		if ((size > 1) && head->item) {
 			delete head->item;
 		}
 		delete head;
@@ -125,3 +122,6 @@ void Linklist<ItemType>::display() {
 		curr->item->print();
 	}
 }
+
+
+#endif	/* LINKLIST_L */
