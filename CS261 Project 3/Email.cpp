@@ -17,10 +17,12 @@ Email::~Email() {
 	if (this->emailAddress) {
 		delete[] this->emailAddress;
 	}
+	if (this->emailSubject) {
+		delete[] this->emailSubject;
+	}
 }
 
 void Email::print() {
-	cout << "Email address: " << emailAddress << endl;
 	cout << "Subject: " << emailSubject << endl;
 	Message::print();
 }
@@ -50,7 +52,7 @@ void Email::setEmailSubject(char* subject) {
 	if (this->emailSubject) {
 		delete[] this->emailAddress;
 	}
-	if (emailSubject) {
+	if (subject) {
 		this->emailSubject = new char[strlen(subject) + 1];
 		strcpy(this->emailSubject, subject);
 	}

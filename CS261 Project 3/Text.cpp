@@ -8,8 +8,8 @@
 #include "Text.h"
 
 Text::Text(char * numTo, char * numFrom, char * msg) : Message(numTo, numFrom, msg) {
-	this->setTo(numTo);
-	this->setFrom(numFrom);
+	this->setPhoneNumberTo(numTo);
+	this->setPhoneNumberFrom(numFrom);
 }
 
 /*Text::Text(const Text& orig)  {
@@ -26,8 +26,6 @@ Text::~Text() {
 }
 
 void Text::print() {
-	cout << "Phone number to: " << phoneNumberTo << endl
-		<< "Phone number from: " << phoneNumberFrom << endl;
 	Message::print();
 }
 
@@ -72,8 +70,8 @@ char *  Text::getPhoneNumberTo() const {
 const Text& Text::operator=(const Text& t) {
 	if (!(*this == t)) {
 		Message::operator=(t);
-		this->setTo(t.phoneNumberFrom);
-		this->setFrom(t.phoneNumberTo);
+		this->setPhoneNumberTo(t.phoneNumberFrom);
+		this->setPhoneNumberFrom(t.phoneNumberTo);
 	}
 	return *this;
 }

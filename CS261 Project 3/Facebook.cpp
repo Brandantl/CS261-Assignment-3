@@ -19,7 +19,6 @@ Facebook::~Facebook() {
 }
 
 void Facebook::print() {
-	cout << "Username: " << userName << endl;
 	Message::print();
 }
 
