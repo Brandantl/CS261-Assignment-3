@@ -16,15 +16,15 @@ class TxtContact: public Contact{
 
 public:
 	TxtContact();//default constructor
-	TxtContact(string &, int &, int &, Type &);
+	TxtContact(char *, char *);
 	TxtContact(TxtContact & tContact);//copy constructor
 	~TxtContact();
-	int getPhNumber()const;
+	char * getPhNumber()const;
 	void print();
 //	TxtContact& operator=(TxtContact & tContact);
-	void setPhNumber(const int);
+	void setPhNumber(char *);
 private:
-	int phone;
+	char * phone;
 
 
 };

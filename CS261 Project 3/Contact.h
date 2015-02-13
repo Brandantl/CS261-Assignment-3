@@ -22,17 +22,17 @@ public:
 	};
 
 	Contact();//default constructor
-	Contact(string &, int &, Type &);
+	Contact(char *, Type);
 	Contact(Contact&);//copy constructor
 	virtual ~Contact();
-	virtual void setName(const string &);
-	virtual string getName();
+	virtual void setName( char *);
+	virtual char * getName() const;
 	virtual void  print();
 	virtual Type getPref();
-	virtual void setPref(const Type &);
+	virtual void setPref(Type);
 	virtual void operator=(Contact&);
 private:
-	string name;
+	char * name;
 	Type pref;// preference 1 is txt, preference 2 is email, preference 3 is facebook
 };
 

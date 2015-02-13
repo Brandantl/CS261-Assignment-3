@@ -14,14 +14,14 @@
 //#include "FBContact.h"
 class FBContact: public Contact{
 public:
-	FBContact(string &, int &, Type &, string &);
+	FBContact(char *, char *);
 	FBContact(FBContact &);
 	~FBContact();
-	string getFbName();
-	void setFbName(string);
+	char * getFbName() const;
+	void setFbName(char *);
 	void print();
 //	virtual void operator=(FBContact &);
 private:
-	string login;
+	char * login;
 };
 #endif /* defined(____FBContact__) */

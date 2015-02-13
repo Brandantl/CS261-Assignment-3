@@ -31,10 +31,10 @@ Message::~Message() {
 }
 
 void Message::print() {
-	struct tm* timeinfo;
-	timeinfo = localtime(&timeStamp);
+	time_t rawtime;
+	time(&rawtime);
 
-	cout << "Time: " << asctime(timeinfo) << endl;
+	cout << "Time: " << ctime(&rawtime) << endl;
 	cout << "From: " << nameFrom << endl;
 	cout << "To: " << nameTo << endl;
 	cout << content << endl << endl;
@@ -88,7 +88,7 @@ Message  Message::operator+=(const Message& obj){
 		delete[] this->content;
 	}
 	if (tmp.c_str()) {
-		this->nameFrom = new char[strlen(tmp.c_str()) + 1];
+		this->content = new char[strlen(tmp.c_str()) + 1];
 		strcpy(this->content, tmp.c_str());
 	}
 	return *this;

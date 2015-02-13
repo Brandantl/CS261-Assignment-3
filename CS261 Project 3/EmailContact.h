@@ -5,14 +5,14 @@
 
 class EmailContact:public Contact{
 public:
-	EmailContact(string &, int &, Type &, string&);
+	EmailContact(char *, char*);
 	EmailContact(EmailContact&);
 	~EmailContact();
-	void setEmAdress(const string);
-	string getEmAdress();
+	void setEmAdress(char *);
+	char * getEmAdress() const;
 	void print();
 
 private:
-	string eAdress;
+	char * eAdress;
 };
 #endif

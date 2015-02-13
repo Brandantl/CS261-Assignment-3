@@ -5,12 +5,13 @@
 //  Author:David P
 //
 //
+#define _CRT_SECURE_NO_WARNINGS
 #include "TxtContact.h"
 /*TxtContact::TxtContact():Contact("i", 0, 0), phone(0){
-	
+
 }*/
-TxtContact::TxtContact(string & aName, int & index, int & ph, Type & pref) : Contact(aName, index, pref){
-	phone = ph;
+TxtContact::TxtContact(char * aName, char * ph) : Contact(aName, Contact::Text){
+	this->setPhNumber(ph);
 }
 
 TxtContact::TxtContact(TxtContact & tContact) : Contact(tContact){
@@ -19,20 +20,28 @@ TxtContact::TxtContact(TxtContact & tContact) : Contact(tContact){
 }
 
 TxtContact::~TxtContact(){
-
+	if (this->phone) {
+		delete[] this->phone;
+	}
 }
 
-int TxtContact::getPhNumber()const{
-	return phone; 
+char * TxtContact::getPhNumber()const{
+	return phone;
 }
 
 
-void TxtContact::setPhNumber(const int ph){
-		phone = ph;
+void TxtContact::setPhNumber(char * ph){
+	if (this->phone) {
+		delete[] this->phone;
+	}
+	if (ph) {
+		this->phone = new char[strlen(ph) + 1];
+		strcpy(this->phone, ph);
+	}
 }
 void TxtContact::print(){
 	Contact::print();
-	cout << "phone#: " << phone << endl;
+	cout << "phone: " << phone << endl;
 }
 
 

@@ -9,6 +9,9 @@
 #include "Text.h"
 #include "Email.h"
 #include "Facebook.h"
+#include "TxtContact.h"
+#include "EmailContact.h"
+#include "FBContact.h"
 using namespace std;
 
 /*
@@ -27,9 +30,19 @@ int main(int argc, char** argv) {
 	Facebook FBMessage("david.platt", "brandan.lasley", "This seems to work OK.");
 	FBMessage.print();
 
+	cout << endl << "========== CONTACT ==========" << endl;
 
+	cout << "Type: Text Contact" << endl;
+	TxtContact TextContactTest("Brandan Lasley", "5039293771");
+	TextContactTest.print();
 
+	cout << endl << "Type: Email Contact" << endl;
+	EmailContact EmailContactTest("Brandan Lasley", "admin@brandanlasley.com");
+	EmailContactTest.print();
 
+	cout << endl << "Type: FaceBook Contact" << endl;
+	FBContact FaceBookContactTest("Brandan Lasley", "brandan.lasley");
+	FaceBookContactTest.print();
 
 
 	cin.get();
