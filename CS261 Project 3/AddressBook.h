@@ -18,9 +18,9 @@ using namespace std;
 class AddressBook {
 public:
 	enum Type {
-		TextCont,
-		EmailCont,
-		FacebookCont
+		TextCont = 1,
+		EmailCont = 2,
+		FacebookCont = 3
 	};
 	AddressBook();
 	AddressBook(const AddressBook& orig);

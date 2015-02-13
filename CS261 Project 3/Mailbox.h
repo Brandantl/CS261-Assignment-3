@@ -18,9 +18,9 @@ using namespace std;
 class Mailbox {
 public:
 	enum Type {
-		TextMsg,
-		EmailMsg,
-		FacebookMsg
+		TextMsg = 1,
+		EmailMsg = 2,
+		FacebookMsg = 3 
 	};
 	Mailbox();
 	Mailbox(const Mailbox& orig);

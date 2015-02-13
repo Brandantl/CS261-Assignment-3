@@ -9,7 +9,7 @@
 #define	MESSAGE_H
 
 #include <iostream>
-#include <string>
+#include <cstring>
 #include <ctime>
 using namespace std;
 

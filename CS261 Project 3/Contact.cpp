@@ -9,7 +9,7 @@
 
 Contact::Contact() {
 
-	name = "i";
+	name = NULL;
 }
 Contact::Contact(const Contact& nCon){
 	this->setName(nCon.name);

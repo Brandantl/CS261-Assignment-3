@@ -9,6 +9,7 @@
 #define	EMAIL_H
 
 #include "Message.h"
+#include <cstring>
 
 class Email : public Message {
 public:

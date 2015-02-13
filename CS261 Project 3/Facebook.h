@@ -7,7 +7,7 @@
 
 #ifndef FACEBOOK_H
 #define	FACEBOOK_H
-#include <string>
+#include <cstring>
 #include "Message.h"
 using namespace std;
 

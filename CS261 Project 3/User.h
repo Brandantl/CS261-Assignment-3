@@ -16,19 +16,19 @@ public:
     User(char *, char*, char *);
     User(const User& orig);
     virtual ~User();
-	void setEmailAddress(char *);
-	void setPhoneNumber(char *);
-	void setFBUserName(char *);
+    void setEmailAddress(char *);
+    void setPhoneNumber(char *);
+    void setFBUserName(char *);
     void checkMessages();
-	void displayAddressBook();
-	void writeMessage(char * contents, char * message, char * to, Mailbox::Type thing);
+    void displayAddressBook();
+    void writeMessage(char * contents, char * message, char * to, Mailbox::Type thing);
     void addContact(char *, char *, AddressBook::Type);
 private:
     Mailbox myMailbox;
     AddressBook myAddressBook;
-	char * emailAddress;
-	char * PhoneNumer;
-	char * FBUserName;
+    char * emailAddress;
+    char * PhoneNumer;
+    char * FBUserName;
 };
 
 #endif	/* USER_H */

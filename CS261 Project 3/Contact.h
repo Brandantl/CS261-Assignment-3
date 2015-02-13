@@ -8,7 +8,7 @@
 #define	CONTACTS_H
 
 #include<iostream>
-#include<string>
+#include <cstring>
 
 
 
