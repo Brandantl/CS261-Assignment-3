@@ -64,7 +64,7 @@ int main(int argc, char** argv) {
 			MyUser.displayAddressBook();
 			break;
 		default:
-			cout << " Command not found ";
+			cout << " Command not found " << endl;
 		}
 		command = getCommand();
 	}
