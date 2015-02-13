@@ -9,11 +9,13 @@
 #include "Facebook.h"
 
 Facebook::Facebook(char * _to, char * _from, char * _message) : Message(_to, _from, _message) {
-	this->setUsername(_from);
+userName = NULL;	
+    this->setUsername(_from);
 }
 
 Facebook::Facebook(const Facebook&) : Message(NULL, NULL, NULL)  {
-	// TODO!!!!!
+userName = NULL;		
+    // TODO!!!!!
 }
 
 Facebook::~Facebook() {

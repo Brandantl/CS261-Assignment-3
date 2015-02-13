@@ -8,15 +8,16 @@
 #include "Contact.h"
 
 Contact::Contact() {
-
 	name = NULL;
 }
 Contact::Contact(const Contact& nCon){
+	name = NULL;
 	this->setName(nCon.name);
 	this->setPref(nCon.pref);
 }
 
 Contact::Contact(char * aName, Type flag) {
+    	name = NULL;
 	this->setName(aName);
 	this->setPref(flag);
 

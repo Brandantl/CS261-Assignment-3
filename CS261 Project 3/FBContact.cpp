@@ -14,11 +14,12 @@ FBContact::FBContact():Contact("i", 0, 0){
 	login = "i";
 }*/
 FBContact::FBContact(char * name, char * log) : Contact(name, Contact::Facebook){
-	this->setFbName(log);
+	login = NULL;	
+    this->setFbName(log);
 }
 
 FBContact::FBContact(FBContact & nFbContact) : Contact(nFbContact){
-	
+	login = NULL;
 	this->login = nFbContact.login;
 }
 

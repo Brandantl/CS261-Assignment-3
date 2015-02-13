@@ -8,41 +8,41 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "EmailContact.h"
 
-EmailContact::EmailContact(char *  aName, char *  emAdress) : Contact(aName, Contact::Email){
-	this->setEmAdress(emAdress);
+EmailContact::EmailContact(char * aName, char * emAdress) : Contact(aName, Contact::Email) {
+    eAdress = NULL;
+    this->setEmAdress(emAdress);
 }
 
-EmailContact::EmailContact(const  EmailContact & currEmContact) : Contact(currEmContact)
-{
-	this->setEmAdress(currEmContact.eAdress);
+EmailContact::EmailContact(const EmailContact & currEmContact) : Contact(currEmContact) {
+    eAdress = NULL;
+    this->setEmAdress(currEmContact.eAdress);
 }
 
-EmailContact::~EmailContact(){
-	if (this->eAdress) {
-		delete[] this->eAdress;
-	}
+EmailContact::~EmailContact() {
+    if (this->eAdress) {
+        delete[] this->eAdress;
+    }
 }
 
-void EmailContact::setEmAdress(char * nAdress){
-	if (this->eAdress) {
-		delete[] this->eAdress;
-	}
-	if (nAdress) {
-		this->eAdress = new char[strlen(nAdress) + 1];
-		strcpy(this->eAdress, nAdress);
-	}
-	else {
-		this->eAdress = NULL;
-	}
+void EmailContact::setEmAdress(char * nAdress) {
+    if (this->eAdress) {
+        delete[] this->eAdress;
+    }
+    if (nAdress) {
+        this->eAdress = new char[strlen(nAdress) + 1];
+        strcpy(this->eAdress, nAdress);
+    } else {
+        this->eAdress = NULL;
+    }
 }
 
 char * EmailContact::getEmAdress() const {
-	return eAdress;
+    return eAdress;
 }
 
-void EmailContact::print(){
-	Contact::print();
-	cout << "Email address: " << eAdress << endl;
+void EmailContact::print() {
+    Contact::print();
+    cout << "Email address: " << eAdress << endl;
 }
 
 
