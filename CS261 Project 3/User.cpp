@@ -89,3 +89,10 @@ void User::setFBUserName(char * _fbusername) {
         this->FBUserName = NULL;
     }
 }
+
+const User& User::operator=(const User& obj) {
+	this->setEmailAddress(obj.emailAddress);
+	this->setFBUserName(obj.FBUserName);
+	this->setPhoneNumber(PhoneNumer);
+	return *this;
+}

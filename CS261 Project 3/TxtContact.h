@@ -22,6 +22,7 @@ public:
 	char * getPhNumber()const;
 	void print();
 	void setPhNumber(char *);
+	virtual const TxtContact& operator=(const TxtContact& obj);
 private:
 	char * phone;
 };

@@ -75,5 +75,5 @@ const Email& Email::operator=(const Email& e) {
 }
 
 bool Email::operator==(const Email& obj) const {
-    return true;
+	return Message::operator==(obj);
 }

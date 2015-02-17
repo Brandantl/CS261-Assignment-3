@@ -19,7 +19,7 @@ public:
 	char * getFbName() const;
 	void setFbName(char *);
 	void print();
-	// Todo add = and ==
+	virtual const FBContact& operator=(const FBContact& obj);
 private:
 	char * login;
 };

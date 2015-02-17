@@ -25,13 +25,12 @@ public:
 	Contact(char *, Type);
 	Contact(const Contact&);//copy constructor
 	virtual ~Contact();
-	virtual void setName( char *);
+	virtual void setName(char *);
 	virtual char * getName() const;
 	virtual void  print();
-	virtual Type getPref();
+	virtual Type getPref() const;
 	virtual void setPref(Type);
 	virtual void operator=(Contact&);
-	// Todo and ==
 private:
 	char * name;
 	Type pref;// preference 1 is txt, preference 2 is email, preference 3 is facebook

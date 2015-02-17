@@ -23,6 +23,7 @@ public:
     void displayAddressBook();
     void writeMessage(char * contents, char * message, char * to, Mailbox::Type thing);
     void addContact(char *, char *, AddressBook::Type);
+	virtual const User& operator=(const User& obj);
 private:
     Mailbox myMailbox;
     AddressBook myAddressBook;

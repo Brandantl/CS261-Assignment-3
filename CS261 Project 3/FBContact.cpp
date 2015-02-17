@@ -10,12 +10,12 @@
 
 /*
 FBContact::FBContact():Contact("i", 0, 0){
-	
-	login = "i";
+
+login = "i";
 }*/
 FBContact::FBContact(char * name, char * log) : Contact(name, Contact::Facebook){
-	login = NULL;	
-    this->setFbName(log);
+	login = NULL;
+	this->setFbName(log);
 }
 
 FBContact::FBContact(FBContact & nFbContact) : Contact(nFbContact){
@@ -47,6 +47,13 @@ void FBContact::setFbName(char * nLog){
 }
 
 void FBContact::print(){
-	Contact::print();
 	cout << "login: " << login << endl;
+	Contact::print();
+}
+
+const FBContact& FBContact::operator = (const FBContact& obj) {
+	this->setFbName(obj.getFbName());
+	this->setName(obj.getName());
+	this->setPref(obj.getPref());
+	return *this;
 }

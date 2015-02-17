@@ -13,9 +13,9 @@ userName = NULL;
     this->setUsername(_from);
 }
 
-Facebook::Facebook(const Facebook&) : Message(NULL, NULL, NULL)  {
+Facebook::Facebook(const Facebook& obj, char * _to, char * _from, char * _message) : Message(_to, _from, _message)  {
 userName = NULL;		
-    // TODO!!!!!
+*this = obj;
 }
 
 Facebook::~Facebook() {
@@ -54,4 +54,8 @@ Facebook Facebook::operator=(const Facebook & f) {
 	Message::operator=(f);
 	this->setUsername(f.userName);
 	return *this;
+}
+
+bool Facebook::operator==(const Facebook& obj) const {
+	return Message::operator==(obj);
 }

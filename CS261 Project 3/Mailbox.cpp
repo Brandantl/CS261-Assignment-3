@@ -9,15 +9,12 @@
 #include "Mailbox.h"
 
 Mailbox::Mailbox() {
-	// Todo
 }
 
 Mailbox::Mailbox(const Mailbox& orig) {
-	// Todo
 }
 
 Mailbox::~Mailbox() {
-	// Not needed.
 }
 
 void Mailbox::displayMessages(){

@@ -9,80 +9,46 @@
 #include "EmailContact.h"
 
 EmailContact::EmailContact(char * aName, char * emAdress) : Contact(aName, Contact::Email) {
-    eAdress = NULL;
-    this->setEmAdress(emAdress);
+	eAdress = NULL;
+	this->setEmAdress(emAdress);
 }
 
 EmailContact::EmailContact(const EmailContact & currEmContact) : Contact(currEmContact) {
-    eAdress = NULL;
-    this->setEmAdress(currEmContact.eAdress);
+	eAdress = NULL;
+	this->setEmAdress(currEmContact.eAdress);
 }
 
 EmailContact::~EmailContact() {
-    if (this->eAdress) {
-        delete[] this->eAdress;
-    }
+	if (this->eAdress) {
+		delete[] this->eAdress;
+	}
 }
 
 void EmailContact::setEmAdress(char * nAdress) {
-    if (this->eAdress) {
-        delete[] this->eAdress;
-    }
-    if (nAdress) {
-        this->eAdress = new char[strlen(nAdress) + 1];
-        strcpy(this->eAdress, nAdress);
-    } else {
-        this->eAdress = NULL;
-    }
+	if (this->eAdress) {
+		delete[] this->eAdress;
+	}
+	if (nAdress) {
+		this->eAdress = new char[strlen(nAdress) + 1];
+		strcpy(this->eAdress, nAdress);
+	}
+	else {
+		this->eAdress = NULL;
+	}
 }
 
 char * EmailContact::getEmAdress() const {
-    return eAdress;
+	return eAdress;
 }
 
 void EmailContact::print() {
-    Contact::print();
-    cout << "Email address: " << eAdress << endl;
+	cout << "Email address: " << eAdress << endl;
+	Contact::print();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const EmailContact& EmailContact::operator = (const EmailContact& obj) {
+	this->setEmAdress(obj.getEmAdress());
+	this->setName(obj.getName());
+	this->setPref(obj.getPref());
+	return *this;
+}

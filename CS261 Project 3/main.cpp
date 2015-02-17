@@ -14,6 +14,7 @@ void getString(char * prompt, char * input);
 void displayMenu();
 char getCommand();
 int getInt(char * prompt);
+void createMessages(User & obj);
 const int MAX_LEN = 100;
 
 int main(int argc, char** argv) {
@@ -25,6 +26,7 @@ int main(int argc, char** argv) {
 	getString("Please Enter phone Facebook Username: ", _FBUserName);
 
 	User MyUser(_emailAddress, _PhoneNumer, _FBUserName);
+	createMessages(MyUser);
 
 	char command = '?';
 	displayMenu();
@@ -118,4 +120,15 @@ int getInt(char * prompt) {
 	}
 	cin.ignore(100, '\n');
 	return temp;
+}
+
+void createMessages(User & obj) {
+	// void writeMessage(char * subject, char * message, char * to, Mailbox::Type thing);
+	obj.writeMessage(NULL, "Sup", "Brandan", Mailbox::TextMsg);
+	obj.writeMessage(NULL, "Hows your wife", "Josh", Mailbox::FacebookMsg);
+	obj.writeMessage("Puppies", "Whats your dogs name", "bob", Mailbox::EmailMsg);
+//	void addContact(char * _name, char * _address, Type  thing);
+	obj.addContact("Rob", "sexyman@hotmail.com", AddressBook::EmailCont);
+	obj.addContact("Joe", "joe.smith", AddressBook::FacebookCont);
+	obj.addContact("Pi", "3141592659", AddressBook::TextCont);
 }

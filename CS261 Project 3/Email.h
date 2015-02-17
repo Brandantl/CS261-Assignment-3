@@ -23,7 +23,7 @@ public:
 	virtual void setEmailAddress(char *);
 	virtual void setEmailSubject(char *);
 	virtual const Email& operator=(const Email& e);
-	bool operator==(const Email& obj) const;
+	virtual bool operator==(const Email& obj) const;
 private:
     char* emailAddress;
     char* emailSubject;

@@ -17,7 +17,7 @@ Contact::Contact(const Contact& nCon){
 }
 
 Contact::Contact(char * aName, Type flag) {
-    	name = NULL;
+	name = NULL;
 	this->setName(aName);
 	this->setPref(flag);
 
@@ -46,9 +46,10 @@ void Contact::print(){
 	const char * Accounts[] = { "Text", "Email", "FaceBook" };
 	cout << "Account Type: " << Accounts[pref] << endl;
 	cout << "name: " << name << endl;
+	cout << endl;
 }
 
-Contact::Type Contact::getPref(){
+Contact::Type Contact::getPref() const {
 	return pref;
 }
 
@@ -58,6 +59,6 @@ void Contact::setPref(Type flag){
 
 
 void Contact::operator=(Contact& nCon){
-	this->name = nCon.name;
-	this->pref = nCon.pref;
+	this->setName(nCon.name);
+	this->setPref(nCon.pref);
 }
