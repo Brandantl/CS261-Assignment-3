@@ -42,7 +42,28 @@ Linklist<ItemType>::Linklist() {
 
 template <class ItemType>
 Linklist<ItemType>::Linklist(Linklist<ItemType>& orig) {
-	this->operator(orig);
+	if (orig->head) {
+		node<ItemType> * current = orig->head;
+		while (current) {
+			if (head) {
+				node<ItemType> * tmp = new node < ItemType >;
+				tmp->item = current->item;
+				tmp->next = NULL;
+				this->tail->next = tmp;
+				tail = tmp->next;
+			}
+			else {
+				head = new node < ItemType >;
+				head->item = current->item;
+				head->next = NULL;
+				tail = head;
+			}
+		}
+	}
+	else {
+		head = NULL;
+		tail = NULL;
+	}
 }
 
 template <class ItemType>
